@@ -1,0 +1,22 @@
+# Слияние списков
+def merge(a, b):
+    i = 0
+    j = 0
+    c = []
+    while i < len(a) and j < len(b):
+        if a[i] <= b[j]:
+            c.append(a[i])
+            i += 1
+        else:
+            c.append(b[j])
+            j += 1
+    while i < len(a):
+        c.append(a[i])
+        i += 1
+    while j < len(b):
+        c.append(b[j])
+        j += 1
+    return c
+a = input()
+b = input()
+print(''.join(map(str, merge(a, b))))
