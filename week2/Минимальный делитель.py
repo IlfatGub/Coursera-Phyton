@@ -1,4 +1,3 @@
-# Минимальный делитель
 n = int(input())
 i = 2
 while True:

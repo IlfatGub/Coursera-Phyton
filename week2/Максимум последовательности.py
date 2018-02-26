@@ -1,4 +1,3 @@
-# Максимум последовательности
 max = 0
 element = - 1
 while element != 0:

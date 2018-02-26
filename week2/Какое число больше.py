@@ -1,4 +1,3 @@
-# Какое число больше?
 n = int(input())
 m = int(input())
 if n > m:

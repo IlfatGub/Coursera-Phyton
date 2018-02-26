@@ -1,4 +1,3 @@
-# Второй максимум
 first_max = int(input())
 second_max = int(input())
 if first_max < second_max:

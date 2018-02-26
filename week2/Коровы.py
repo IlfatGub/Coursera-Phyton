@@ -1,4 +1,3 @@
-# Коровы
 n = int(input())
 if (n >= 11) and (n <= 14):
     print(n, 'korov')

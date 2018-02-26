@@ -1,4 +1,3 @@
-# Коробки
 A1 = int(input())  # Box 1
 B1 = int(input())
 C1 = int(input())

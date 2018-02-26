@@ -1,4 +1,3 @@
-x = float(input())
 y = float(input())
 p = 0.1
 counter = 1
