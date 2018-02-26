@@ -26,4 +26,4 @@ def find_value(x):
     else:
         return b[r][0]
 
-print(*[find_value(v) for v in a])
+# print(*[find_value(v) for v in a])

@@ -2,8 +2,8 @@
 n = int(input())
 m = int(input())
 if n > m:
-    print(n)
-elif n < m:
-    print(m)
+    print(1)
+elif m > n:
+    print(2)
 else:
-    print(m)
+    print(0)

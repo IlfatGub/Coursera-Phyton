@@ -4,7 +4,7 @@ m = int(input())
 if n > m:
     print(n)
 else:
-    if n == m :
+    if n == m:
         print(n)
     else:
         print(m)
