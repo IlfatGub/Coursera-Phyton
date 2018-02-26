@@ -19,4 +19,4 @@ def merge(a, b):
     return c
 a = input()
 b = input()
-print(''.join(map(str, merge(a, b))))
+print(' '.join(map(str, merge(a, b))))

@@ -1,12 +1,14 @@
-# Гражданская оборона
 n = int(input())
 a = map(int, input().split())
 m = int(input())
 b = list(map(int, input().split()))
+
 for i in range(len(b)):
     b[i] = [i + 1, b[i]]
 
 b.sort(key=lambda x: x[1])
+
+
 def find_value(x):
     if (x < b[0][1]):
         return b[0][0]
@@ -26,4 +28,5 @@ def find_value(x):
     else:
         return b[r][0]
 
-# print(*[find_value(v) for v in a])
+
+print(*[find_value(v) for v in a])
