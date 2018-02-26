@@ -8,6 +8,5 @@ def MinDivisor(n):
            return
        i += 1
     print(i)
-
 n = int(input())
 MinDivisor(n)

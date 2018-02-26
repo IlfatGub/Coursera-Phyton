@@ -5,6 +5,7 @@ def square(x, y):
     else:
         return False
 
+
 def IsPointSquare(x, y):
     return square(x, y)
 
