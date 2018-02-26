@@ -1,6 +1,8 @@
 # Возведение в степень
-a = int(input())
+a = float(input())
 n = int(input())
+
+
 def power(a, n):
     if n == 0:
         return 1
