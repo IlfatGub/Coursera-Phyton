@@ -1,4 +1,3 @@
-# Возведение в степень
 a = float(input())
 n = int(input())
 
