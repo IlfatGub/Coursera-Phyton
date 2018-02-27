@@ -1,16 +1,17 @@
 # Сократите дробь
-import math
+def gcd(n, m):
+    if m == 0:
+        return n
+    return gcd(m, n % m)
 
-a = int(input())
-b = int(input())
 
+def ReduceFraction(n, m):
+    x = gcd(n, m)
+    p = n // x
+    q = m // x
+    return p, q
 
-def ReduceFraction(a, b):
-    while a != b:
-        if a > b:
-            a = a - b
-        else:
-            b = b - a
-    return (a)
-k = ReduceFraction(a, b)
-print(a // k, b // k)
+n = int(input())
+m = int(input())
+p, q = ReduceFraction(n, m)
+print(p, q)
