@@ -17,6 +17,6 @@ def merge(a, b):
         c.append(b[j])
         j += 1
     return c
-a = input()
-b = input()
-print(' '.join(map(str, merge(a, b))))
+a = list(map(int, (input().split())))
+b = list(map(int, (input().split())))
+print(' '.join(map(str, sorted(merge(a, b)))))
