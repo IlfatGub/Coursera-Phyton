@@ -1,24 +1,29 @@
-def gen_scories(infile):
-    for line in infile:
-        _, *points = line.rstrip().rsplit(None, 3)
-        points = [int(x) for x in points]
-        if any(x < 40 for x in points):
-            continue
-        yield sum(points)
+inFile = open('input.txt', 'r', encoding='utf8')
+outFile = open('output.txt', 'w', encoding='utf8')
+k = inFile.readline()
+k = int(k)
+rez = []
+l = inFile.readlines()
+for i in l:
+    if len(i.split()) == 6:
+        n1, n2, n3, s1, s2, s3 = i.split()
+    if len(i.split()) == 5:
+        n1, n2, s1, s2, s3 = i.split()
 
-
-with open("input.txt", "r",
-          encoding="utf-8") as fin, open("output.txt", "w",
-                                         encoding="utf-8") as fout:
-
-    places = int(next(fin))
-    scories = sorted(gen_scories(fin), reverse=True)
-
-    if places >= len(scories):
-        print(0, file=fout)
+    if int(s1) >= 40 and int(s2) >= 40 and int(s3) >= 40:
+        sum = int(s1) + int(s2) + int(s3)
     else:
-        max_score = scories[0]
-        if places < len([x for x in scories if x == max_score]):
-            print(1, file=fout)
-        else:
-            print(scories[places - 1], file=fout)
+        sum = 0
+    rez.append(sum)
+rez.sort(reverse=True)
+if rez[k] == 0:
+    print(0)
+elif rez[0] == rez[k]:
+    print(1)
+elif rez[k] == rez[k - 1]:
+    print(rez[k - 2])
+
+else:
+    print(rez[k - 1])
+inFile.close()
+outFile.close()
