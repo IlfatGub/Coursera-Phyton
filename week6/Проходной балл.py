@@ -1,29 +1,29 @@
-inFile = open('input.txt', 'r', encoding='utf8')
-outFile = open('output.txt', 'w', encoding='utf8')
-k = inFile.readline()
-k = int(k)
-rez = []
-l = inFile.readlines()
-for i in l:
-    if len(i.split()) == 6:
-        n1, n2, n3, s1, s2, s3 = i.split()
-    if len(i.split()) == 5:
-        n1, n2, s1, s2, s3 = i.split()
+myFile = open("input.txt", "r", encoding="utf8")
+k = int(myFile.readline())
+myList = []
+for line in myFile:
+    newLine = line.split()
+    if int(newLine[-1]) >= 40 and int(newLine[-2]) >= 40 \
+            and int(newLine[-3]) >= 40:
+        myList.append(newLine)
+myFile.close()
+myList.sort(key=lambda a: int(a[-1]) + int(a[-2]) + int(a[-3]))
+myList.reverse()
+konk = []
+for i in myList:
+    sum = int(i[-1]) + int(i[-2]) + int(i[-3])
+    konk.append(sum)
+n = len(konk)
 
-    if int(s1) >= 40 and int(s2) >= 40 and int(s3) >= 40:
-        sum = int(s1) + int(s2) + int(s3)
-    else:
-        sum = 0
-    rez.append(sum)
-rez.sort(reverse=True)
-if rez[k] == 0:
-    print(0)
-elif rez[0] == rez[k]:
-    print(1)
-elif rez[k] == rez[k - 1]:
-    print(rez[k - 2])
 
-else:
-    print(rez[k - 1])
-inFile.close()
-outFile.close()
+def konkurs(n, k, konk):
+    if n <= k:
+        return 0
+    elif konk[k] == konk[0]:
+        return 1
+    for i in range(k, 0, -1):
+        if konk[i] < konk[i - 1]:
+            return konk[i - 1]
+
+
+print(konkurs(n, k, konk))
