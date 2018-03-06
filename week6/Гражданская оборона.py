@@ -16,7 +16,6 @@ def find_value(x):
         return b[-1][0]
     l = 0
     r = len(b) - 1
-    # b[l][1] < x
     while (r - l > 1):
         m = (r + l) >> 1
         if (b[m][1] < x):
